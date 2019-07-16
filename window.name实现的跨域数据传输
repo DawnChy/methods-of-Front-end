@@ -14,7 +14,8 @@ b.com/data.html：应用页面需要获取数据的页面，可称为数据页�
     window.name = 'I was there!';    // 这里是要传输的数据，大小一般为2M，IE和firefox下可以大至32M左右
                                      // 数据格式可以自定义，如json、字符串
 </script>
-在应用页面（a.com/app.html）中监听iframe的onload事件，在此事件中设置这个iframe的src指向本地域的代理文件（代理文件和应用页面在同一域下，所以可以相互通信）。app.html部分代码如下：
+在应用页面（a.com/app.html）中监听iframe的onload事件，在此事件中设置这个iframe的src指向本地域的代理文件
+（代理文件和应用页面在同一域下，所以可以相互通信）。app.html部分代码如下：
 <script type="text/javascript">
     var state = 0, 
     iframe = document.createElement('iframe'),
@@ -41,4 +42,5 @@ b.com/data.html：应用页面需要获取数据的页面，可称为数据页�
     iframe.contentWindow.close();
     document.body.removeChild(iframe);
 </script>
-总结起来即：iframe的src属性由外域转向本地域，跨域数据即由iframe的window.name从外域传递到本地域。这个就巧妙地绕过了浏览器的跨域访问限制，但同时它又是安全操作。
+总结起来即：iframe的src属性由外域转向本地域，跨域数据即由iframe的window.name从外域传递到本地域。
+这个就巧妙地绕过了浏览器的跨域访问限制，但同时它又是安全操作。
