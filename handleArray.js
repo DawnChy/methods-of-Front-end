@@ -47,4 +47,19 @@ const handleArray = {
 
     return arr;
   }
+  
+  /**
+   * @description 将arguments中的非空值推入一个新数组中，返回这个数组。
+   * @param {Array} arguments
+   * @returns {Array} *
+   */
+  push: (arguments) => {
+    let arr = [];
+    for (let i = 0, l = arguments.length; i < l; i++) {
+        if (!isEmpty(arguments[i])) {
+            arr.push(arguments[i]);
+        }
+    }
+    return arr;
+  }
 }
