@@ -27,10 +27,24 @@ const handleArray = {
   }
   
   /**
-   * @description 将arguments中的非空值追加到源数组。如果argument是数组，则将它拆分后追加到源数组，但只会拆分一层
+   * @description 将arguments中的非空值追加到源数组。如果argument是数组，则将它拆分后追加到源数组
    * @param {Array} list 原数组
    * @param {Array} arguments 追加数组
    * @returns {Array} *
    */
-   
+  append: (list, arguments) = {
+    let arr = list.concat();
+    let IsArr = (A) => {
+      for (let i = 0,l = A.length; i < l; i++){
+        if(isArray(A[i])){
+          IsArr(A[i]);
+        } else {
+          arr.push(A[i]);
+        }
+      }
+    };
+    IsArr(arguments);
+
+    return arr;
+  }
 }
