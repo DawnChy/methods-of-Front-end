@@ -107,4 +107,16 @@ const handleArray = {
     }
     return false;
   },
+    
+  /**
+   * @description 数组排重
+   * @param {Array} repeatArray 对象数组
+   * @returns {Array} *
+   */
+  removeRepeatItem: (repeatArray) => {
+    let arr = repeatArray.filter(function (item, index, array){
+      return array.indexOf(item) === index;
+    });
+    return arr;
+  }
 }
