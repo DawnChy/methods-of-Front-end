@@ -71,7 +71,7 @@ const handleArray = {
   mergeObjArray: (objArray1, objArray2) => {
     let OA = objArray.concat();
     for (let i = 0, l = objArray2.length; i++){
-      if (!handleObject.isEmpty(objArray2[i])) {  //🔗
+      if (!handleObject.isEmpty(objArray2[i])) {  //🔗handleObject.isEmpty()
         OA.push(objArray2[i]);
       }
     }
@@ -86,7 +86,7 @@ const handleArray = {
    */
   deleteObjArrayProperty: (objArray, property) => {
     for (let i = 0, l = objArray.length; i < l; i++){
-      handleObject.deleteProperty(objArray[i], property);  //🔗
+      handleObject.deleteProperty(objArray[i], property);  //🔗handleObject.deleteProperty()
     }
   },
 }
