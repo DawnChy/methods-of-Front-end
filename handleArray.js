@@ -89,4 +89,22 @@ const handleArray = {
       handleObject.deleteProperty(objArray[i], property);  //🔗handleObject.deleteProperty()
     }
   },
+    
+  /**
+   * @description 检测对象数组中某一属性的zhi5是否等于一特定值
+   * @param {*} value 特定值
+   * @param {Array} objArray 对象数组
+   * @returns {Boolen} true & false
+   */
+  isValInObjArray: (value, objArray, key) => {
+  for (var i = 0, l = objArray.length; i < l; i++) {
+    var obj = objArray[i];
+      if (obj.hasOwnProperty(key)) {
+        if (obj[key] === value) {
+          return true;
+        }
+      }
+    }
+    return false;
+  },
 }
