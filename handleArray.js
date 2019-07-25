@@ -62,4 +62,19 @@ const handleArray = {
     }
     return arr;
   }
+  
+  /**
+   * @description 合并对象数组，将objArray1与objArray2合并，返回新的对象数组。
+   * @param {Array} objArray1 objArray2 对象数组
+   * @returns {Array} * 对象数组
+   */
+  mergeObjArray: (objArray1, objArray2) => {
+    let OA = objArray.concat();
+    for (let i = 0, l = objArray2.length; i++){
+      if (!handleObject.isEmpty(objArray2[i])) {
+        OA.push(objArray2[i]);
+      }
+    }
+    return OA;
+  }
 }
