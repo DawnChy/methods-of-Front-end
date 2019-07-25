@@ -8,7 +8,7 @@ const handleArray = {
   in: (value, arr) => {
     let index = arr.indexOf(val);
     return index !== -1;
-  }
+  },
   
   /**
    * @description 将可迭代对象转换成数组
@@ -24,7 +24,7 @@ const handleArray = {
       arr[i] = list[i + start];
     }
     return arr;
-  }
+  },
   
   /**
    * @description 将arguments中的非空值追加到源数组。如果argument是数组，则将它拆分后追加到源数组
@@ -46,7 +46,7 @@ const handleArray = {
     IsArr(arguments);
 
     return arr;
-  }
+  },
   
   /**
    * @description 将arguments中的非空值推入一个新数组中，返回这个数组。
@@ -61,7 +61,7 @@ const handleArray = {
         }
     }
     return arr;
-  }
+  },
   
   /**
    * @description 合并对象数组，将objArray1与objArray2合并，返回新的对象数组。
@@ -71,10 +71,22 @@ const handleArray = {
   mergeObjArray: (objArray1, objArray2) => {
     let OA = objArray.concat();
     for (let i = 0, l = objArray2.length; i++){
-      if (!handleObject.isEmpty(objArray2[i])) {
+      if (!handleObject.isEmpty(objArray2[i])) {  //🔗
         OA.push(objArray2[i]);
       }
     }
     return OA;
-  }
+  },
+  
+  /**
+   * @description 删除对象数组中所有对象的指定属性（修改源数组）
+   * @param {Array} objArray 对象数组
+   * @param {string} property 属性名
+   * @returns {Array} * 对象数组
+   */
+  deleteObjArrayProperty: (objArray, property) => {
+    for (let i = 0, l = objArray.length; i < l; i++){
+      handleObject.deleteProperty(objArray[i], property);  //🔗
+    }
+  },
 }
