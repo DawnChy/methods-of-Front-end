@@ -91,7 +91,7 @@ const handleArray = {
   },
     
   /**
-   * @description 检测对象数组中某一属性的zhi5是否等于一特定值
+   * @description 检测对象数组中某一属性的值是否等于一特定值
    * @param {*} value 特定值
    * @param {Array} objArray 对象数组
    * @returns {Boolen} true & false
@@ -129,5 +129,18 @@ const handleArray = {
     return a1.filter(function (v){
       return a2.indexOf(v) > -1;
     })
+  },
+    
+  /**
+   * @description 求arguments中的多个数组的交集(求一个二维数组中子数组的交集)
+   * @param {Array} arguments：[{a1:[1,2,3,4]},{a2:[3,4,5,6]},{a3:[2,4,6,8]}]
+   * @returns {Array} *
+   */
+  intersectAll: (arguments) => {
+      var _self = this;
+      var arr = Array.prototype.slice.apply(arguments);
+      return arr.reduce(function (prev, cur, index, arr) {
+          return _self.intersect(prev, cur);
+      });
   },
 }
