@@ -97,8 +97,8 @@ const handleArray = {
    * @returns {Boolen} true & false
    */
   isValInObjArray: (value, objArray, key) => {
-  for (var i = 0, l = objArray.length; i < l; i++) {
-    var obj = objArray[i];
+    for (var i = 0, l = objArray.length; i < l; i++) {
+      var obj = objArray[i];
       if (obj.hasOwnProperty(key)) {
         if (obj[key] === value) {
           return true;
