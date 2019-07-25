@@ -69,7 +69,7 @@ const handleArray = {
    * @returns {Array} * 对象数组
    */
   mergeObjArray: (objArray1, objArray2) => {
-    let OA = objArray.concat();
+    let OA = objArray1.concat();
     for (let i = 0, l = objArray2.length; i++){
       if (!handleObject.isEmpty(objArray2[i])) {  //🔗handleObject.isEmpty()
         OA.push(objArray2[i]);
@@ -118,5 +118,6 @@ const handleArray = {
       return array.indexOf(item) === index;
     });
     return arr;
-  }
+  },
+  
 }
