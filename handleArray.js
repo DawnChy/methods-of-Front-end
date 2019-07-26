@@ -125,7 +125,7 @@ const handleArray = {
    * @param {Array} arr1 arr2 
    * @returns {Array} *
    */
-  isIntersec: (arr1, arr2) => {
+  intersect: (arr1, arr2) => {
     return a1.filter(function (v){
       return a2.indexOf(v) > -1;
     })
