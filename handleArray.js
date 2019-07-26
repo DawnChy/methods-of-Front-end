@@ -137,10 +137,21 @@ const handleArray = {
    * @returns {Array} *
    */
   intersectAll: (arguments) => {
-      var _self = this;
-      var arr = Array.prototype.slice.apply(arguments);
-      return arr.reduce(function (prev, cur, index, arr) {
-          return _self.intersect(prev, cur);
-      });
+    var _self = this;
+    var arr = Array.prototype.slice.apply(arguments);
+    return arr.reduce(function (prev, cur, index, arr) {
+        return _self.intersect(prev, cur);
+    });
+  },
+    
+  /**
+   * @description 两个数组的并集(union)
+   * @param {Array} arr1 arr2
+   * @returns {Array} *
+   */
+  union: (arr1, arr2) => {
+    return arr1.concat(arr2.filter(function (v) {
+        return arr1.indexOf(v) === -1;
+    }))
   },
 }
