@@ -15,7 +15,7 @@ var fav = '李沁';
 function shows (){
   console.log(this.fav);
 }
-shows()  // 盲僧　
+shows()  // 李沁　
 
 比较一下这两者 this 的差别，第一个打印里面的 this 指向 obj，第二个全局声明的 shows() 函数 this 是 window ；
 
