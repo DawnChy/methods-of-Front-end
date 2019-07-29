@@ -154,4 +154,17 @@ const handleArray = {
         return arr1.indexOf(v) === -1;
     }))
   },
+    
+  /**
+   * @description 求arguments中的多个数组的并集(求一个二维数组中子数组的并集)
+   * @param {Array} arguments：[{a1:[1,2,3,4]},{a2:[3,4,5,6]},{a3:[2,4,6,8]}]
+   * @returns {Array} *
+   */
+  unionAll: (arguments) => {
+    let _self = this;
+    let arr = Array.prototype.slice.apply(arguments);
+    return arr.reduce(function (prev, cur, index, arr) {
+      return _self.union(prev, cur);
+    });
+  },
 }
