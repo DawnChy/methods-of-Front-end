@@ -70,7 +70,7 @@ const handleArray = {
    */
   mergeObjArray: (objArray1, objArray2) => {
     let OA = objArray1.concat();
-    for (let i = 0, l = objArray2.length; i++){
+    for (let i = 0, l = objArray2.length; i < l; i++){
       if (!handleObject.isEmpty(objArray2[i])) {  //🔗handleObject.isEmpty()
         OA.push(objArray2[i]);
       }
