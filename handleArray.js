@@ -32,7 +32,7 @@ const handleArray = {
    * @param {Array} arguments 追加数组
    * @returns {Array} *
    */
-  append: (list, arguments) = {
+  append: (list, arguments) => {
     let arr = list.concat();
     let IsArr = (A) => {
       for (let i = 0,l = A.length; i < l; i++){
