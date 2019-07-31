@@ -157,7 +157,7 @@ const handleArray = {
     
   /**
    * @description 求arguments中的多个数组的并集(求一个二维数组中子数组的并集)
-   * @param {Array} arguments：[{a1:[1,2,3,4]},{a2:[3,4,5,6]},{a3:[2,4,6,8]}]
+   * @param {Array} arguments：[{a1:[1,2,3,4]},{a2:[3,4,5,6]},{a3:[2,4,6,8]},......]
    * @returns {Array} *
    */
   unionAll: (arguments) => {
@@ -171,13 +171,13 @@ const handleArray = {
   /**
    * @description 求对象数组中指定键对应的数组的并集
    * @param {Array} objArray 对象数组
-   * @param {String} key 指定将要返回的数组来自对象的哪个键，该键的值为数组 ['name','age','gender',.....]
+   * @param {String} key 指定将要返回的数组来自对象的哪个键，该键的值为数组 'a1'
    * @returns {Array} *
    */
   unionObjectArray: (objArray, key) => {
     let arr = [];
     for (let i = 0, l = objArray.length; i < l; i++) {
-        arr.push(objArray[i][keyOfArray]);
+        arr.push(objArray[i][key]);
     }
     return this.unionAll(arr);
   },
