@@ -171,8 +171,8 @@ const handleArray = {
   /**
    * @description 求对象数组中指定键对应的数组的并集
    * @param {Array} objArray 对象数组
-   * @param {String} key 指定将要返回的数组来自对象的哪个键，该键的值为数组
-   * @return {Array} *
+   * @param {String} key 指定将要返回的数组来自对象的哪个键，该键的值为数组 ['name','age','gender',.....]
+   * @returns {Array} *
    */
   unionObjectArray: (objArray, key) => {
     let arr = [];
@@ -180,5 +180,12 @@ const handleArray = {
         arr.push(objArray[i][keyOfArray]);
     }
     return this.unionAll(arr);
-  }
+  },
+  
+  /**
+   * @description
+   * @param
+   * @returns
+   */
+  
 }
