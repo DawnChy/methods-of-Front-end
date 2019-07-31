@@ -170,7 +170,7 @@ const handleArray = {
   
   /**
    * @description 求对象数组中指定键对应的数组的并集
-   * @param {Array} objArray 对象数组
+   * @param {Array} objArray 对象数组 [{a1:[1,2,3,4],a2:[3,4,5,6],a3:[2,4,6,8]},{a1:[2,3,4],a2:[3,4,6],a3:[2,6,8]},......]
    * @param {String} key 指定将要返回的数组来自对象的哪个键，该键的值为数组 'a1'
    * @returns {Array} *
    */
