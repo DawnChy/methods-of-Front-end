@@ -215,4 +215,24 @@ const handleArray = {
     }
     return this.unique(arr); //unique 数组排重
   },
+  
+  /**
+   * 当对象数组的元素的某个键的值为指定值时，返回该对象
+   * @param {Array} objArray 对象数组
+   * @param {String} itemKey 对象的键
+   * @param {*} itemValue 对象的键值
+   * @return {Object && null} 返回符合条件的第一个对象。无结果返回null
+   */
+  getObjFromObjArrayByKV: (objArray, itemKey, itemValue) => {
+    if (!objArray || !itemKey || itemValue == undefined) {
+      throw TypeError('getObjectByKeyValue:' + objArray + itemKey + itemValue);
+    }
+    for (var i = 0, l = objArray.length; i < l; i++) {
+      let obj = objArray[i];
+      if (obj[itemKey] == itemValue) {
+        return obj;
+      }
+    }
+    return null;
+  },
 }
