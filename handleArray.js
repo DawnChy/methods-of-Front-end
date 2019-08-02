@@ -192,4 +192,27 @@ const handleArray = {
       return arr2.indexOf(v) === -1;
     });
   },
+  
+  /**
+   * 获得对象数组中指定key的值的集合
+   * @param {array} arr 由对象组成的数组
+   * @param {string} key 要返回值的键
+   * @returns {array} 包含不重复的值的数组
+   */
+  getObjArrayUniqueValue: (objArray, key) => {
+    if (!objArray) {
+      return null;
+    }
+    if (!objArray.length) {
+      return null;
+    }
+
+    let arr = [];
+    for (var i = 0, l = objArray.length; i < l; i++) {
+      if (!isNone(objArray[i][key])) {
+          arr = arr.concat(objArray[i][key]);
+      }
+    }
+    return this.unique(arr); //unique 数组排重
+  },
 }
