@@ -183,9 +183,13 @@ const handleArray = {
   },
   
   /**
-   * @description
-   * @param
-   * @returns
+   * @description 求两数组的差值
+   * @param {Array} arr1、arr2
+   * @returns {Array} *
    */
-  
+  difference: (arr1, arr2) => {
+    return arr1.filter(function (v) {
+      return arr2.indexOf(v) === -1;
+    });
+  },
 }
