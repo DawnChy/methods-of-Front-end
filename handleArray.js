@@ -237,8 +237,20 @@ const handleArray = {
   },
   
   /**
-   * @description
-   * @param {}
-   * @returns {}
+   * @description 返回由对象数组中每个对象的指定属性值组成的数组
+   * @param {Array} objArray 对象数组
+   * @param {String} itemKey 属性名
+   * @returns {Array} *
    */
+  getSubArrayByKey: (objArray, itemKey) => {
+        if (!objArray || !itemKey) {
+            throw TypeError('getSubArrayByKey', objArray + itemKey);
+        }
+        let arr = [];
+        for (var i = 0, l = objArray.length; i < l; i++) {
+            var obj = objArray[i];
+            arr.push(obj[itemKey]);
+        }
+        return arr;
+    },
 }
