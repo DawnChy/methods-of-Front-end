@@ -237,7 +237,7 @@ const handleArray = {
   },
   
   /**
-   * @description 返回由对象数组中每个对象的指定属性值组成的数组
+   * @description 返回由对象数组中每个对象的指定属性值组成的数组subArray(子数组)
    * @param {Array} objArray 对象数组
    * @param {String} itemKey 属性名
    * @returns {Array} *
