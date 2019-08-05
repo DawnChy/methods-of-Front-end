@@ -34,4 +34,33 @@ const handleObject = {
    * @param {Object} obj
    * @returns {Object} * 新对象 
    */
+  clone: obj => {
+    if (o === undefined) {
+      return undefined
+    }
+    if (o === null) {
+      return null
+    }
+    let newObj;
+    if (o instanceof Array) {
+      newObj = [];
+      for (var i = 0, l = o.length; i < l; i++) {
+        if (typeof o[i] === 'object' && o[i] !== null) {
+          newObj[i] = this.clone(o[i]);
+        } else {
+          newObj[i] = o[i];
+        }
+      }
+    } else if (typeof o === 'object') {
+      newObj = {};
+      for (var key in o) {
+        if (typeof o[key] === 'object' && o[key] !== null) {
+          newObj[key] = this.clone(o[key]);
+        } else {
+          newObj[key] = o[key];
+        }
+      }
+    }
+    return newObj;
+  }
 }
